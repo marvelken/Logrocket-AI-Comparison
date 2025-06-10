@@ -134,10 +134,12 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
                    tool.name.includes('GPT') ? 'AI Assistant' :
                    tool.name.includes('Copilot') ? 'IDE Integration' :
                    tool.name.includes('Cursor') ? 'AI-Native IDE' :
-                   tool.name.includes('Windsurf') ? 'AI Editor' :
+                   tool.name.includes('Windsurf') ? 'AI-Native IDE' :
                    tool.name.includes('v0') ? 'UI Generator' :
                    tool.name.includes('Bolt') ? 'Full-Stack Builder' :
                    tool.name.includes('Gemini') ? 'AI Assistant' :
+                   tool.name.includes('Lovable AI') ? 'AI Assistant' :
+                   tool.name.includes('Deepseek') ? 'AI Assistant' :
                    'IDE Integration'}
                 </div>
               </div>

@@ -60,7 +60,7 @@ const tools: Tool[] = [
   {
     id: 'windsurf',
     name: 'Windsurf',
-    type: 'AI Editor',
+    type: 'AI-Native IDE',
     description: 'Fast AI-powered editing with real-time collaboration',
     icon: 'code',
     gradient: 'from-cyan-500 to-blue-500'
@@ -96,6 +96,22 @@ const tools: Tool[] = [
     description: 'AI assistant built into JetBrains IDEs',
     icon: 'code',
     gradient: 'from-orange-500 to-red-600'
+  },
+  {
+    id: 'lovable',
+    name: 'Lovable AI',
+    type: 'Full-Stack Builder',
+    description: 'AI-powered full-stack app development from natural language',
+    icon: 'heart',
+    gradient: 'from-pink-500 to-rose-600'
+  },
+  {
+    id: 'deepseek',
+    name: 'Deepseek Coder',
+    type: 'Open Source AI',
+    description: 'Privacy-first coding assistant with local deployment',
+    icon: 'shield',
+    gradient: 'from-blue-600 to-indigo-700'
   }
 ];
 
