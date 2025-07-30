@@ -1,16 +1,19 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, X, AlertTriangle, ChevronDown, ChevronRight, Download, Share2 } from 'lucide-react';
-import { toolData, featureCategories } from '../lib/data';
+import { Check, X, AlertTriangle, ChevronDown, ChevronRight, Download, Share2, Brain, Code, Zap, Trophy, DollarSign, FileText } from 'lucide-react';
+import { toolData, getRelevantFeatureCategories } from '../lib/data';
 
 interface ComparisonTableProps {
   selectedTools: string[];
 }
 
 const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
+  // Get relevant feature categories based on selected tools
+  const relevantCategories = getRelevantFeatureCategories(selectedTools);
+  
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-    new Set(Object.keys(featureCategories))
+    new Set(Object.keys(relevantCategories))
   );
 
   if (selectedTools.length === 0) {
@@ -48,16 +51,31 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
   };
 
   const exportComparison = () => {
-    // Simple CSV export functionality
+    const relevantCategories = getRelevantFeatureCategories(selectedTools);
     let csvContent = "Feature," + selectedTools.map(id => toolData[id].name).join(",") + "\n";
     
-    Object.entries(featureCategories).forEach(([category, features]) => {
+    // Add basic info
+    csvContent += "\nBasic Information,,,,\n";
+    csvContent += "Type,";
+    selectedTools.forEach(toolId => {
+      csvContent += `${toolData[toolId].type},`;
+    });
+    csvContent += "\n";
+    
+    csvContent += "Category,";
+    selectedTools.forEach(toolId => {
+      csvContent += `${toolData[toolId].category},`;
+    });
+    csvContent += "\n";
+
+    // Add features
+    Object.entries(relevantCategories).forEach(([category, features]) => {
       csvContent += `\n${category},,,,\n`;
       features.forEach(feature => {
         csvContent += `${feature},`;
         selectedTools.forEach(toolId => {
           const hasFeature = toolData[toolId].features[feature];
-          csvContent += `${hasFeature === true ? 'Yes' : hasFeature === false ? 'No' : hasFeature},`;
+          csvContent += `${hasFeature === true ? 'Yes' : hasFeature === false ? 'No' : hasFeature || 'N/A'},`;
         });
         csvContent += "\n";
       });
@@ -84,11 +102,13 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
         console.log('Error sharing:', err);
       }
     } else {
-      // Fallback to copying URL
       navigator.clipboard.writeText(window.location.href);
       alert('Link copied to clipboard!');
     }
   };
+
+  const aiModels = selectedTools.filter(id => toolData[id].type === 'AI Model');
+  const devTools = selectedTools.filter(id => toolData[id].type === 'Development Tool');
 
   return (
     <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
@@ -97,9 +117,12 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
         <div className="flex justify-between items-center">
           <div>
             <h2 className="text-3xl font-bold text-white mb-2">Feature Comparison</h2>
-            <p className="text-purple-100">
-              Comparing {selectedTools.length} tools across {Object.keys(featureCategories).length} feature categories
-            </p>
+            <div className="flex items-center space-x-4 text-purple-100">
+              <span>📊 {selectedTools.length} tools selected</span>
+              {aiModels.length > 0 && <span>🧠 {aiModels.length} AI models</span>}
+              {devTools.length > 0 && <span>🛠️ {devTools.length} dev tools</span>}
+              <span>📋 {Object.keys(relevantCategories).length} categories</span>
+            </div>
           </div>
           <div className="flex space-x-3">
             <button
@@ -120,28 +143,62 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
         </div>
       </div>
 
-      {/* Tool Headers */}
-      <div className="bg-gray-50 px-8 py-4 border-b border-gray-200">
+      {/* Tool Headers with Enhanced Info */}
+      <div className="bg-gray-50 px-8 py-6 border-b border-gray-200">
         <div className="grid gap-4" style={{ gridTemplateColumns: `300px repeat(${selectedTools.length}, 1fr)` }}>
-          <div className="font-medium text-gray-700">Features</div>
+          <div className="font-medium text-gray-700">Tools & Features</div>
           {selectedTools.map(toolId => {
             const tool = toolData[toolId];
+            const isAIModel = tool.type === 'AI Model';
+            
             return (
-              <div key={toolId} className="text-center">
-                <div className="font-bold text-gray-900">{tool.name}</div>
-                <div className="text-sm text-gray-500 mt-1">
-                  {tool.name.includes('Claude') ? 'AI Assistant' : 
-                   tool.name.includes('GPT') ? 'AI Assistant' :
-                   tool.name.includes('Copilot') ? 'IDE Integration' :
-                   tool.name.includes('Cursor') ? 'AI-Native IDE' :
-                   tool.name.includes('Windsurf') ? 'AI-Native IDE' :
-                   tool.name.includes('v0') ? 'UI Generator' :
-                   tool.name.includes('Bolt') ? 'Full-Stack Builder' :
-                   tool.name.includes('Gemini') ? 'AI Assistant' :
-                   tool.name.includes('Lovable AI') ? 'AI Assistant' :
-                   tool.name.includes('Deepseek') ? 'AI Assistant' :
-                   'IDE Integration'}
+              <div key={toolId} className="text-center space-y-3">
+                {/* Tool Name and Type */}
+                <div>
+                  <div className="flex items-center justify-center space-x-2 mb-1">
+                    {isAIModel ? (
+                      <Brain className="w-5 h-5 text-purple-600" />
+                    ) : (
+                      <Code className="w-5 h-5 text-blue-600" />
+                    )}
+                    <span className="font-bold text-gray-900">{tool.name}</span>
+                  </div>
+                  <div className="text-sm text-gray-500">{tool.category}</div>
                 </div>
+
+                {/* AI Model Specific Info */}
+                {isAIModel && (
+                  <div className="bg-white rounded-lg p-3 border border-gray-200 space-y-2">
+                    {tool.benchmark && (
+                      <div className="flex items-center justify-center space-x-1 text-xs">
+                        <Trophy className="w-3 h-3 text-yellow-500" />
+                        <span className="font-medium text-green-700">{tool.benchmark}</span>
+                      </div>
+                    )}
+                    {tool.contextWindow && (
+                      <div className="flex items-center justify-center space-x-1 text-xs">
+                        <FileText className="w-3 h-3 text-blue-500" />
+                        <span className="text-blue-700">{tool.contextWindow}</span>
+                      </div>
+                    )}
+                    {tool.pricing && (
+                      <div className="flex items-center justify-center space-x-1 text-xs">
+                        <DollarSign className="w-3 h-3 text-green-500" />
+                        <span className="text-green-700">{tool.pricing}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Development Tool Specific Info */}
+                {!isAIModel && tool.pricing && (
+                  <div className="bg-white rounded-lg p-3 border border-gray-200">
+                    <div className="flex items-center justify-center space-x-1 text-xs">
+                      <DollarSign className="w-3 h-3 text-green-500" />
+                      <span className="text-green-700">{tool.pricing}</span>
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })}
@@ -149,8 +206,8 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
       </div>
 
       {/* Feature Categories */}
-      <div className="max-h-96 overflow-y-auto">
-        {Object.entries(featureCategories).map(([category, features]) => {
+      <div className="max-h-[600px] overflow-y-auto">
+        {Object.entries(relevantCategories).map(([category, features]) => {
           const isExpanded = expandedCategories.has(category);
           
           return (
@@ -167,6 +224,12 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
                     <ChevronRight className="w-5 h-5 text-gray-500" />
                   )}
                   <span>{category}</span>
+                  {category === 'AI Model Capabilities' && (
+                    <Brain className="w-4 h-4 text-purple-600" />
+                  )}
+                  {(category === 'Tool Integration' || category === 'Workflow Features') && (
+                    <Code className="w-4 h-4 text-blue-600" />
+                  )}
                 </h3>
                 <span className="text-sm text-gray-500">
                   {features.length} features
@@ -186,8 +249,35 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
                       <div className="grid gap-4 items-center" style={{ gridTemplateColumns: `300px repeat(${selectedTools.length}, 1fr)` }}>
                         <div className="font-medium text-gray-700">{feature}</div>
                         {selectedTools.map(toolId => {
-                          const hasFeature = toolData[toolId].features[feature];
+                          const tool = toolData[toolId];
+                          const hasFeature = tool.features[feature];
                           const featureValue = getFeatureValue(hasFeature);
+                          
+                          // Handle features that don't apply to certain tool types
+                          if (category === 'AI Model Capabilities' && tool.type !== 'AI Model') {
+                            return (
+                              <div key={toolId} className="flex items-center justify-center">
+                                <span className="text-xs text-gray-400 italic">N/A</span>
+                              </div>
+                            );
+                          }
+                          
+                          if ((category === 'Tool Integration' || category === 'Workflow Features') && tool.type !== 'Development Tool') {
+                            return (
+                              <div key={toolId} className="flex items-center justify-center">
+                                <span className="text-xs text-gray-400 italic">N/A</span>
+                              </div>
+                            );
+                          }
+                          
+                          // Handle missing features (undefined)
+                          if (hasFeature === undefined) {
+                            return (
+                              <div key={toolId} className="flex items-center justify-center">
+                                <span className="text-xs text-gray-400 italic">N/A</span>
+                              </div>
+                            );
+                          }
                           
                           return (
                             <div key={toolId} className="flex items-center justify-center space-x-2">
@@ -210,25 +300,68 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
         })}
       </div>
 
-      {/* Footer */}
-      <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
-        <div className="flex justify-between items-center text-sm text-gray-600">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <Check className="w-4 h-4 text-emerald-500" />
-              <span>Supported</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <AlertTriangle className="w-4 h-4 text-amber-500" />
-              <span>Limited/Partial</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <X className="w-4 h-4 text-red-500" />
-              <span>Not Available</span>
+      {/* Enhanced Footer with Statistics */}
+      <div className="bg-gray-50 px-8 py-6 border-t border-gray-200">
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Legend */}
+          <div className="space-y-3">
+            <h4 className="font-semibold text-gray-800 mb-3">Legend</h4>
+            <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+              <div className="flex items-center space-x-2">
+                <Check className="w-4 h-4 text-emerald-500" />
+                <span>Full Support</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <AlertTriangle className="w-4 h-4 text-amber-500" />
+                <span>Limited/Partial</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <X className="w-4 h-4 text-red-500" />
+                <span>Not Available</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-xs text-gray-400 italic">N/A</span>
+                <span>Not Applicable</span>
+              </div>
             </div>
           </div>
-          <div className="text-xs text-gray-500">
-            Last updated: {new Date().toLocaleDateString()}
+
+          {/* Quick Stats */}
+          <div className="space-y-3">
+            <h4 className="font-semibold text-gray-800 mb-3">Quick Stats</h4>
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="bg-white rounded-lg p-3 border border-gray-200">
+                <div className="font-medium text-gray-700">AI Models</div>
+                <div className="text-lg font-bold text-purple-600">{aiModels.length}</div>
+              </div>
+              <div className="bg-white rounded-lg p-3 border border-gray-200">
+                <div className="font-medium text-gray-700">Dev Tools</div>
+                <div className="text-lg font-bold text-blue-600">{devTools.length}</div>
+              </div>
+              <div className="bg-white rounded-lg p-3 border border-gray-200">
+                <div className="font-medium text-gray-700">Features</div>
+                <div className="text-lg font-bold text-green-600">
+                  {Object.values(relevantCategories).flat().length}
+                </div>
+              </div>
+              <div className="bg-white rounded-lg p-3 border border-gray-200">
+                <div className="font-medium text-gray-700">Categories</div>
+                <div className="text-lg font-bold text-orange-600">
+                  {Object.keys(relevantCategories).length}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Info */}
+        <div className="mt-6 pt-4 border-t border-gray-300 flex justify-between items-center text-sm text-gray-500">
+          <div>
+            Last updated: {new Date().toLocaleDateString()} | Data from official documentation
+          </div>
+          <div className="flex items-center space-x-2">
+            <Zap className="w-4 h-4" />
+            <span>Powered by LogRocket</span>
           </div>
         </div>
       </div>
