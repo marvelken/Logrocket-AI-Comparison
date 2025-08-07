@@ -175,10 +175,10 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
                         <span className="font-medium text-green-700">{tool.benchmark}</span>
                       </div>
                     )}
-                    {tool.contextWindow && (
+                    {tool.features['Context Window Size'] && (
                       <div className="flex items-center justify-center space-x-1 text-xs">
                         <FileText className="w-3 h-3 text-blue-500" />
-                        <span className="text-blue-700">{tool.contextWindow}</span>
+                        <span className="text-blue-700">{tool.features['Context Window Size']}</span>
                       </div>
                     )}
                     {tool.pricing && (
