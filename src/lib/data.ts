@@ -6,7 +6,6 @@ export interface ToolData {
   description: string;
   features: Record<string, boolean | string>;
   pricing?: string;
-  contextWindow?: string;
   benchmark?: string;
 }
 
@@ -18,7 +17,6 @@ export const toolData: Record<string, ToolData> = {
     category: 'General Purpose AI',
     description: 'Smart, efficient model for everyday coding tasks',
     pricing: '$3/$15 per 1M tokens',
-    contextWindow: '200K tokens',
     benchmark: '72.7% SWE-bench',
     features: {
       'Real-time code completion': true,
@@ -29,6 +27,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
+      'Context Window Size': '200K',
+      'SWE-bench Score': '72.7%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -53,7 +53,8 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'API Cost (per 1M tokens)': '$3/$15'
     }
   },
   'claude-opus-4': {
@@ -62,7 +63,6 @@ export const toolData: Record<string, ToolData> = {
     category: 'Premium AI',
     description: 'Most capable model for complex development tasks',
     pricing: '$15/$75 per 1M tokens',
-    contextWindow: '200K tokens',
     benchmark: '72.5% SWE-bench',
     features: {
       'Real-time code completion': true,
@@ -73,6 +73,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
+      'Context Window Size': '200K',
+      'SWE-bench Score': '72.5%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -97,7 +99,8 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'API Cost (per 1M tokens)': '$15/$75'
     }
   },
   'gpt-41': {
@@ -106,7 +109,6 @@ export const toolData: Record<string, ToolData> = {
     category: 'General Purpose AI',
     description: 'Advanced language model with large context window',
     pricing: '$2/$8 per 1M tokens',
-    contextWindow: '1M tokens',
     benchmark: '54.6% SWE-bench',
     features: {
       'Real-time code completion': true,
@@ -117,6 +119,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
+      'Context Window Size': '1M',
+      'SWE-bench Score': '54.6%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -141,7 +145,8 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': true
+      'Custom model training': true,
+      'API Cost (per 1M tokens)': '$2/$8'
     }
   },
   'gemini-25-pro': {
@@ -150,7 +155,6 @@ export const toolData: Record<string, ToolData> = {
     category: 'Multimodal AI',
     description: 'Multimodal AI with voice and visual capabilities',
     pricing: '$1.25/$10 per 1M tokens',
-    contextWindow: '1M-2M tokens',
     benchmark: '63.8% SWE-bench',
     features: {
       'Real-time code completion': true,
@@ -161,6 +165,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
+      'Context Window Size': '1M-2M',
+      'SWE-bench Score': '63.8%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -185,7 +191,8 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': 'Limited'
+      'Custom model training': 'Limited',
+      'API Cost (per 1M tokens)': '$1.25/$10'
     }
   },
   'kimi-k2': {
@@ -194,7 +201,6 @@ export const toolData: Record<string, ToolData> = {
     category: 'Agentic AI',
     description: 'Open agentic intelligence with massive parameter count',
     pricing: '$0.15/$2.50 per 1M tokens',
-    contextWindow: '128K tokens',
     benchmark: '65.8% SWE-bench',
     features: {
       'Real-time code completion': true,
@@ -205,6 +211,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
+      'Context Window Size': '128K',
+      'SWE-bench Score': '65.8%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -229,7 +237,8 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': true,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'API Cost (per 1M tokens)': '$0.15/$2.50'
     }
   },
   'grok-4': {
@@ -238,7 +247,6 @@ export const toolData: Record<string, ToolData> = {
     category: 'Specialized Coding AI',
     description: 'First-principles reasoning with coding specialization',
     pricing: '$300/year',
-    contextWindow: '256K tokens',
     benchmark: '75% SWE-bench',
     features: {
       'Real-time code completion': true,
@@ -249,6 +257,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
+      'Context Window Size': '256K',
+      'SWE-bench Score': '75%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -273,7 +283,8 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'API Cost (per 1M tokens)': '$300/year'
     }
   },
   'qwen-3-coder': {
@@ -282,7 +293,6 @@ export const toolData: Record<string, ToolData> = {
     category: 'Open Source AI',
     description: 'Agentic coding model with repository-scale understanding',
     pricing: '$0.07-1.10 per 1M tokens',
-    contextWindow: '256K-1M tokens',
     benchmark: '68.3% SWE-bench',
     features: {
       'Real-time code completion': true,
@@ -293,6 +303,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
+      'Context Window Size': '256K-1M',
+      'SWE-bench Score': '68.3%',
       'Semantic/deep search': 'Limited',
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -317,7 +329,8 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': true,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': true
+      'Custom model training': true,
+      'API Cost (per 1M tokens)': '$0.07-1.10'
     }
   },
   'deepseek-coder': {
@@ -326,7 +339,6 @@ export const toolData: Record<string, ToolData> = {
     category: 'Open Source AI',
     description: 'High-performance open-source coding model',
     pricing: '$0.07-1.10 per 1M tokens',
-    contextWindow: '128K tokens',
     benchmark: '67.1% SWE-bench',
     features: {
       'Real-time code completion': true,
@@ -337,6 +349,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
+      'Context Window Size': '128K',
+      'SWE-bench Score': '67.1%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -361,7 +375,8 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': true,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': true
+      'Custom model training': true,
+      'API Cost (per 1M tokens)': '$0.07-1.10'
     }
   },
 
@@ -371,7 +386,7 @@ export const toolData: Record<string, ToolData> = {
     type: 'Development Tool',
     category: 'IDE Integration',
     description: 'AI pair programmer with ecosystem integration',
-    pricing: 'Free-$39/user/month',
+    pricing: 'Free-$39',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -398,6 +413,7 @@ export const toolData: Record<string, ToolData> = {
       'API integration assistance': true,
       'Testing code generation': true,
       'Documentation generation': true,
+      'Search': true,
       'Semantic/deep search': true,
       'Terminal integration': 'Limited',
       'Mobile-first design': true,
@@ -414,7 +430,9 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': true
+      'Custom model training': true,
+      'Monthly Pricing': 'Free-$39',
+      'Enterprise Pricing': '$39/user'
     }
   },
   'cursor-ide': {
@@ -422,7 +440,7 @@ export const toolData: Record<string, ToolData> = {
     type: 'Development Tool',
     category: 'AI-Native IDE',
     description: 'AI-first code editor with autonomous capabilities',
-    pricing: 'Free-$200/month',
+    pricing: 'Free-$200',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -449,6 +467,7 @@ export const toolData: Record<string, ToolData> = {
       'API integration assistance': true,
       'Testing code generation': true,
       'Documentation generation': true,
+      'Search': true,
       'Semantic/deep search': true,
       'Terminal integration': true,
       'Mobile-first design': true,
@@ -465,7 +484,9 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': 'Privacy mode',
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'Monthly Pricing': 'Free-$200',
+      'Enterprise Pricing': '$40/user'
     }
   },
   'windsurf': {
@@ -473,7 +494,7 @@ export const toolData: Record<string, ToolData> = {
     type: 'Development Tool',
     category: 'AI-Native IDE',
     description: 'AI-powered editing with Cascade agent',
-    pricing: 'Free-$60/user/month',
+    pricing: 'Free-$60',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -500,6 +521,7 @@ export const toolData: Record<string, ToolData> = {
       'API integration assistance': true,
       'Testing code generation': true,
       'Documentation generation': true,
+      'Search': true,
       'Semantic/deep search': true,
       'Terminal integration': true,
       'Mobile-first design': true,
@@ -516,7 +538,9 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'Monthly Pricing': 'Free-$60',
+      'Enterprise Pricing': '$60/user'
     }
   },
   'vercel-v0': {
@@ -551,6 +575,7 @@ export const toolData: Record<string, ToolData> = {
       'API integration assistance': false,
       'Testing code generation': false,
       'Documentation generation': false,
+      'Search': false,
       'Semantic/deep search': false,
       'Terminal integration': false,
       'Mobile-first design': true,
@@ -567,7 +592,9 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': false,
-      'Custom model training': false
+      'Custom model training': false,
+      'Monthly Pricing': '$5-$30',
+      'Enterprise Pricing': 'Custom'
     }
   },
   'bolt-new': {
@@ -602,6 +629,7 @@ export const toolData: Record<string, ToolData> = {
       'API integration assistance': true,
       'Testing code generation': false,
       'Documentation generation': false,
+      'Search': false,
       'Semantic/deep search': false,
       'Terminal integration': true,
       'Mobile-first design': true,
@@ -618,7 +646,9 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': true,
       'Enterprise features': false,
       'Privacy mode': false,
-      'Custom model training': false
+      'Custom model training': false,
+      'Monthly Pricing': 'Beta',
+      'Enterprise Pricing': 'Custom'
     }
   },
   'jetbrains-ai': {
@@ -653,6 +683,7 @@ export const toolData: Record<string, ToolData> = {
       'API integration assistance': true,
       'Testing code generation': true,
       'Documentation generation': true,
+      'Search': true,
       'Semantic/deep search': true,
       'Terminal integration': true,
       'Mobile-first design': true,
@@ -669,7 +700,9 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': true,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'Monthly Pricing': 'Free-Custom',
+      'Enterprise Pricing': 'Custom'
     }
   },
   'lovable-ai': {
@@ -704,6 +737,7 @@ export const toolData: Record<string, ToolData> = {
       'API integration assistance': true,
       'Testing code generation': false,
       'Documentation generation': true,
+      'Search': false,
       'Semantic/deep search': false,
       'Terminal integration': false,
       'Mobile-first design': true,
@@ -720,7 +754,9 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': 'Limited',
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'Monthly Pricing': 'Free-$30',
+      'Enterprise Pricing': 'Custom'
     }
   },
   'gemini-cli': {
@@ -755,6 +791,7 @@ export const toolData: Record<string, ToolData> = {
       'API integration assistance': true,
       'Testing code generation': true,
       'Documentation generation': true,
+      'Search': true,
       'Semantic/deep search': 'Limited',
       'Terminal integration': 'Limited',
       'Mobile-first design': true,
@@ -771,7 +808,9 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': true,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'Monthly Pricing': 'Free',
+      'Enterprise Pricing': 'Custom'
     }
   },
   'claude-code': {
@@ -806,6 +845,7 @@ export const toolData: Record<string, ToolData> = {
       'API integration assistance': true,
       'Testing code generation': true,
       'Documentation generation': true,
+      'Search': true,
       'Semantic/deep search': true,
       'Terminal integration': true,
       'Mobile-first design': true,
@@ -822,13 +862,16 @@ export const toolData: Record<string, ToolData> = {
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': true,
-      'Custom model training': false
+      'Custom model training': false,
+      'Monthly Pricing': '$20-$200',
+      'Enterprise Pricing': 'Custom'
     }
   }
 };
 
-export const featureCategories: Record<string, string[]> = {
-  'Development Capabilities': [
+// AI Model Categories
+export const aiModelCategories: Record<string, string[]> = {
+  'Development capabilities and framework support': [
     'Real-time code completion',
     'Multi-file editing',
     'Design-to-code conversion',
@@ -837,12 +880,11 @@ export const featureCategories: Record<string, string[]> = {
     'Angular support',
     'TypeScript support',
     'Tailwind CSS integration',
-    'Native IDE integration',
     'Context Window Size',
     'SWE-bench Score',
     'Semantic/deep search'
   ],
-  'Quality & Optimization': [
+  'Quality and optimization features': [
     'Responsive design generation',
     'Accessibility (WCAG) compliance',
     'Performance optimization suggestions',
@@ -851,10 +893,9 @@ export const featureCategories: Record<string, string[]> = {
     'Error debugging assistance',
     'Code refactoring',
     'Browser compatibility checks',
-    'Advanced reasoning mode',
-    'Autonomous agent mode'
+    'Advanced reasoning mode'
   ],
-  'Modern Web Features': [
+  'Modern web development features': [
     'Mobile-first design',
     'Dark mode support',
     'Internationalization (i18n)',
@@ -863,11 +904,55 @@ export const featureCategories: Record<string, string[]> = {
     'Voice/audio input',
     'Image/design upload',
     'Video processing',
-    'Multimodal capabilities',
+    'Multimodal capabilities'
+  ],
+  'Business and deployment considerations': [
+    'Free tier available',
+    'Open source',
+    'Self-hosting option',
+    'Enterprise features',
+    'Privacy mode',
+    'Custom model training',
+    'API Cost (per 1M tokens)'
+  ]
+};
+
+// Development Tool Categories  
+export const developmentToolCategories: Record<string, string[]> = {
+  'Development Capabilities and Framework Support (Tools)': [
+    'Real-time code completion',
+    'Multi-file editing',
+    'Design-to-code conversion',
+    'React component generation',
+    'Vue.js support',
+    'Angular support',
+    'TypeScript support',
+    'Tailwind CSS integration',
+    'Native IDE integration'
+  ],
+  'Quality and Optimization Features (Tools)': [
+    'Responsive design generation',
+    'Accessibility (WCAG) compliance',
+    'Performance optimization suggestions',
+    'Bundle size analysis',
+    'SEO optimization',
+    'Error debugging assistance',
+    'Code refactoring',
+    'Browser compatibility checks',
+    'Autonomous agent mode'
+  ],
+  'Modern Web Development Features (Tools)': [
+    'Mobile-first design',
+    'Dark mode support',
+    'Internationalization (i18n)',
+    'PWA features',
+    'Offline capabilities',
+    'Voice/audio input',
+    'Image/design upload',
     'Screenshot-to-code',
     '3D graphics support'
   ],
-  'Workflow Integration': [
+  'Development workflow integration': [
     'Git integration',
     'Live preview/hot reload',
     'Collaborative editing',
@@ -876,49 +961,18 @@ export const featureCategories: Record<string, string[]> = {
     'Testing code generation',
     'Documentation generation',
     'Search',
+    'Semantic/deep search',
     'Terminal integration'
   ],
-  'Business & Deployment': [
+  'Business and Deployment Considerations (Tools)': [
     'Free tier available',
     'Open source',
     'Self-hosting option',
     'Enterprise features',
     'Privacy mode',
     'Custom model training',
-    'API Cost (per 1M tokens)',
-    'Context Window',
     'Monthly Pricing',
     'Enterprise Pricing'
-  ]
-};
-
-// AI Model specific features
-export const aiModelFeatures: Record<string, string[]> = {
-  'AI Model Capabilities': [
-    'Advanced reasoning mode',
-    'Video processing',
-    'Multimodal capabilities',
-    'Context Window Size',
-    'SWE-bench Score'
-  ]
-};
-
-// Development Tool specific features
-export const developmentToolFeatures: Record<string, string[]> = {
-  'Tool Integration': [
-    'Native IDE integration',
-    'Terminal integration',
-    'Autonomous agent mode'
-  ],
-  'Workflow Features': [
-    'Git integration',
-    'Live preview/hot reload',
-    'Collaborative editing',
-    'Custom component libraries',
-    'API integration assistance',
-    'Testing code generation',
-    'Documentation generation',
-    'Semantic/deep search'
   ]
 };
 
@@ -945,17 +999,18 @@ export function getRelevantFeatureCategories(selectedTools: string[]): Record<st
   const hasAIModels = selectedTools.some(id => toolData[id]?.type === 'AI Model');
   const hasDevTools = selectedTools.some(id => toolData[id]?.type === 'Development Tool');
   
-  let relevantCategories = { ...featureCategories };
-  
-  // Add AI-specific features if AI models are selected
-  if (hasAIModels) {
-    relevantCategories = { ...relevantCategories, ...aiModelFeatures };
+  // Return appropriate categories based on selection
+  if (hasAIModels && hasDevTools) {
+    // Mixed selection - return both AI and tool categories
+    return { ...aiModelCategories, ...developmentToolCategories };
+  } else if (hasAIModels) {
+    // Only AI models selected
+    return aiModelCategories;
+  } else if (hasDevTools) {
+    // Only development tools selected
+    return developmentToolCategories;
   }
   
-  // Add tool-specific features if development tools are selected
-  if (hasDevTools) {
-    relevantCategories = { ...relevantCategories, ...developmentToolFeatures };
-  }
-  
-  return relevantCategories;
+  // Default to AI model categories if nothing selected
+  return aiModelCategories;
 }
