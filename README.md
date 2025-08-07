@@ -1,91 +1,65 @@
-# AI Tools Comparison Engine Documentation
+# AI Dev Tool Comparison Engine
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg)
 
-A modern, responsive web application for comparing AI development tools. Built with Next.js 14, TypeScript, and Tailwind CSS, featuring a glassmorphism design and professional LogRocket branding.
+The ultimate comparison tool for AI development tools and models. Compare up to 4 AI tools side-by-side across 40+ features to find the perfect fit for your development workflow.
+
+**🔗 Live Demo:** [logrocket-ai-comparison.vercel.app](https://logrocket-ai-comparison.vercel.app/)
+
+## ✨ What's Included
+
+**17 AI Tools & Models:**
+- **AI Models:** Claude 4 Sonnet/Opus, GPT-4.1, Gemini 2.5 Pro, Grok 4, Qwen 3 Coder, DeepSeek Coder, Kimi K2
+- **Dev Tools:** GitHub Copilot, Cursor IDE, Windsurf, Claude Code, Vercel v0, Bolt.new, JetBrains AI, Lovable AI, Gemini CLI
+
+**40+ Comparison Features:**
+- Development capabilities & framework support
+- Code quality & optimization features  
+- Modern web development features
+- Workflow integration & deployment options
+- Pricing & business considerations
 
 ## 🚀 Features
 
-### Core Functionality
-- **Interactive Tool Selection**: Select up to 4 AI tools for comparison
-- **Dynamic Comparison Table**: Side-by-side feature comparison with collapsible categories
-- **Export Capabilities**: Export comparison results to CSV format
-- **Share Functionality**: Share comparisons via native Web Share API or clipboard
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Side-by-Side Comparison:** Select 2-4 tools and compare them across all features
+- **Smart Filtering:** Separate views for AI models vs development tools  
+- **Export & Share:** Export comparisons to CSV or share via URL
+- **Responsive Design:** Works perfectly on desktop, tablet, and mobile
+- **Real Data:** Based on August 2025 AI tool rankings and analysis
 
-### Design & UX
-- **Glassmorphism UI**: Modern frosted glass effects with subtle shadows
-- **Smooth Animations**: Micro-interactions and transition effects
-- **Accessibility**: WCAG 2.1 AA compliant with proper contrast ratios
-- **Mobile-First**: Touch-friendly interactions and responsive layouts
-- **Professional Branding**: LogRocket integration with consistent brand colors
-
-### Technical Features
-- **TypeScript**: Full type safety and IntelliSense support
-- **Server-Side Rendering**: Next.js App Router for optimal performance
-- **Optimized Bundle**: Tree-shaking and code splitting
-- **SEO Optimized**: Meta tags, Open Graph, and structured data
-
-## 📋 Table of Contents
-
-1. [Installation & Setup](#installation--setup)
-2. [Project Structure](#project-structure)
-3. [Component Architecture](#component-architecture)
-4. [Data Management](#data-management)
-5. [Styling & Design System](#styling--design-system)
-6. [Configuration](#configuration)
-7. [Deployment](#deployment)
-8. [API Reference](#api-reference)
-9. [Contributing](#contributing)
-10. [Troubleshooting](#troubleshooting)
-
-## 🛠 Installation & Setup
-
-### Prerequisites
-- Node.js 18+ 
-- npm, yarn, or pnpm
-- Git
-
-### Quick Start
+## 🛠 Quick Start
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-org/ai-tools-comparison
-cd ai-tools-comparison
-
-# Install dependencies
+# Clone and install
+git clone https://github.com/marvelken/Logrocket-AI-Comparison
+cd logrocket-ai-comparison
 npm install
 
-# Start development server
+# Start development
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the comparison engine.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📊 How It Works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Select Tools:** Choose 2-4 AI tools or models you want to compare
+2. **View Comparison:** See feature-by-feature breakdown in organized categories
+3. **Make Decision:** Use the data to choose the best tools for your needs
+4. **Export/Share:** Save your comparison or share with your team
 
-## Learn More
+## 🎯 Use Cases
 
-To learn more about Next.js, take a look at the following resources:
+- **Developers:** Find the best AI coding assistant for your workflow
+- **Teams:** Compare enterprise features and pricing across tools
+- **Researchers:** Analyze technical benchmarks like SWE-bench scores
+- **Budget Planning:** Compare pricing models and value propositions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework:** Next.js 14 with App Router
+- **Language:** TypeScript for type safety
+- **Styling:** Tailwind CSS with glassmorphism design
+- **Data:** Comprehensive feature matrix with 40+ data points
