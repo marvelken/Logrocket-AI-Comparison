@@ -17,7 +17,7 @@ export const toolData: Record<string, ToolData> = {
     category: 'General Purpose AI',
     description: 'Smart, efficient model for everyday coding tasks',
     pricing: '$3/$15 per 1M tokens',
-    benchmark: '72.7% SWE-bench',
+    benchmark: '64.93% SWE-bench',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -27,8 +27,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Context Window Size': '200K',
-      'SWE-bench Score': '72.7%',
+      'Total Context Window': '200K',
+      'SWE-bench Score': '64.93%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -54,7 +54,8 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise features': true,
       'Privacy mode': true,
       'Custom model training': false,
-      'API Cost (per 1M tokens)': '$3/$15'
+      'API Cost (per 1M tokens)': '$3/$15',
+      'Max Context Output': '64K'
     }
   },
   'claude-opus-4': {
@@ -63,7 +64,7 @@ export const toolData: Record<string, ToolData> = {
     category: 'Premium AI',
     description: 'Most capable model for complex development tasks',
     pricing: '$15/$75 per 1M tokens',
-    benchmark: '72.5% SWE-bench',
+    benchmark: '67.7% SWE-bench',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -73,8 +74,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Context Window Size': '200K',
-      'SWE-bench Score': '72.5%',
+      'Total Context Window': '200K',
+      'SWE-bench Score': '67.7%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -100,7 +101,8 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise features': true,
       'Privacy mode': true,
       'Custom model training': false,
-      'API Cost (per 1M tokens)': '$15/$75'
+      'API Cost (per 1M tokens)': '$15/$75',
+      'Max Context Output': '32K'
     }
   },
   'gpt-41': {
@@ -109,7 +111,7 @@ export const toolData: Record<string, ToolData> = {
     category: 'General Purpose AI',
     description: 'Advanced language model with large context window',
     pricing: '$2/$8 per 1M tokens',
-    benchmark: '54.6% SWE-bench',
+    benchmark: '39.58% SWE-bench',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -119,8 +121,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Context Window Size': '1M',
-      'SWE-bench Score': '54.6%',
+      'Total Context Window': '1M',
+      'SWE-bench Score': '39.58%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -146,7 +148,8 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise features': true,
       'Privacy mode': true,
       'Custom model training': true,
-      'API Cost (per 1M tokens)': '$2/$8'
+      'API Cost (per 1M tokens)': '$2/$8',
+      'Max Context Output': '32.7K'
     }
   },
   'gemini-25-pro': {
@@ -155,7 +158,7 @@ export const toolData: Record<string, ToolData> = {
     category: 'Multimodal AI',
     description: 'Multimodal AI with voice and visual capabilities',
     pricing: '$1.25/$10 per 1M tokens',
-    benchmark: '63.8% SWE-bench',
+    benchmark: '53.60% SWE-bench',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -165,8 +168,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Context Window Size': '1M-2M',
-      'SWE-bench Score': '63.8%',
+      'Total Context Window': '1M',
+      'SWE-bench Score': '53.60%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -192,7 +195,8 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise features': true,
       'Privacy mode': true,
       'Custom model training': 'Limited',
-      'API Cost (per 1M tokens)': '$1.25/$10'
+      'API Cost (per 1M tokens)': '$1.25/$10',
+      'Max Context Output': '65K'
     }
   },
   'kimi-k2': {
@@ -201,7 +205,7 @@ export const toolData: Record<string, ToolData> = {
     category: 'Agentic AI',
     description: 'Open agentic intelligence with massive parameter count',
     pricing: '$0.15/$2.50 per 1M tokens',
-    benchmark: '65.8% SWE-bench',
+    benchmark: '43.80% SWE-bench',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -211,8 +215,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Context Window Size': '128K',
-      'SWE-bench Score': '65.8%',
+      'Total Context Window': '128K',
+      'SWE-bench Score': '43.80%',
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -238,7 +242,8 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise features': true,
       'Privacy mode': true,
       'Custom model training': false,
-      'API Cost (per 1M tokens)': '$0.15/$2.50'
+      'API Cost (per 1M tokens)': '$0.15/$2.50',
+      'Max Context Output': '131.1K'
     }
   },
   'grok-4': {
@@ -247,7 +252,7 @@ export const toolData: Record<string, ToolData> = {
     category: 'Specialized Coding AI',
     description: 'First-principles reasoning with coding specialization',
     pricing: '$300/year',
-    benchmark: '75% SWE-bench',
+    benchmark: 'N/A',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -257,8 +262,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Context Window Size': '256K',
-      'SWE-bench Score': '75%',
+      'Total Context Window': '256K',
+      'SWE-bench Score': false,
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -284,7 +289,8 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise features': true,
       'Privacy mode': true,
       'Custom model training': false,
-      'API Cost (per 1M tokens)': '$300/year'
+      'API Cost (per 1M tokens)': '$300/year',
+      'Max Context Output': '256K'
     }
   },
   'qwen-3-coder': {
@@ -293,7 +299,7 @@ export const toolData: Record<string, ToolData> = {
     category: 'Open Source AI',
     description: 'Agentic coding model with repository-scale understanding',
     pricing: '$0.07-1.10 per 1M tokens',
-    benchmark: '68.3% SWE-bench',
+    benchmark: '55.40% SWE-bench',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -303,8 +309,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Context Window Size': '256K-1M',
-      'SWE-bench Score': '68.3%',
+      'Total Context Window': '256K-1M',
+      'SWE-bench Score': '55.40%',
       'Semantic/deep search': 'Limited',
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -330,7 +336,8 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise features': true,
       'Privacy mode': true,
       'Custom model training': true,
-      'API Cost (per 1M tokens)': '$0.07-1.10'
+      'API Cost (per 1M tokens)': '$0.07-1.10',
+      'Max Context Output': '262K'
     }
   },
   'deepseek-coder': {
@@ -339,7 +346,7 @@ export const toolData: Record<string, ToolData> = {
     category: 'Open Source AI',
     description: 'High-performance open-source coding model',
     pricing: '$0.07-1.10 per 1M tokens',
-    benchmark: '67.1% SWE-bench',
+    benchmark: 'N/A',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -349,8 +356,8 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Context Window Size': '128K',
-      'SWE-bench Score': '67.1%',
+      'Total Context Window': '128K',
+      'SWE-bench Score': false,
       'Semantic/deep search': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
@@ -376,7 +383,55 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise features': true,
       'Privacy mode': true,
       'Custom model training': true,
-      'API Cost (per 1M tokens)': '$0.07-1.10'
+      'API Cost (per 1M tokens)': '$0.07-1.10',
+      'Max Context Output': '8.2k'
+    }
+  },
+  'gpt-5-medium': {
+    name: 'GPT-5 (medium reasoning)',
+    type: 'AI Model',
+    category: 'General Purpose AI',
+    description: 'High-performance model with advanced reasoning capabilities',
+    pricing: '$1.25/$10 per 1M tokens',
+    benchmark: '65% SWE-bench',
+    features: {
+      'Real-time code completion': true,
+      'Multi-file editing': true,
+      'Design-to-code conversion': true,
+      'React component generation': true,
+      'Vue.js support': true,
+      'Angular support': true,
+      'TypeScript support': true,
+      'Tailwind CSS integration': true,
+      'Total Context Window': '400K',
+      'SWE-bench Score': '65%',
+      'Semantic/deep search': true,
+      'Responsive design generation': true,
+      'Accessibility (WCAG) compliance': true,
+      'Performance optimization suggestions': true,
+      'Bundle size analysis': true,
+      'SEO optimization': true,
+      'Error debugging assistance': true,
+      'Code refactoring': true,
+      'Browser compatibility checks': true,
+      'Advanced reasoning mode': true,
+      'Mobile-first design': true,
+      'Dark mode support': true,
+      'Internationalization (i18n)': true,
+      'PWA features': true,
+      'Offline capabilities': true,
+      'Voice/audio input': true,
+      'Image/design upload': true,
+      'Video processing': true,
+      'Multimodal capabilities': true,
+      'Free tier available': true,
+      'Open source': false,
+      'Self-hosting option': false,
+      'Enterprise features': true,
+      'Privacy mode': true,
+      'Custom model training': true,
+      'API Cost (per 1M tokens)': '$1.25/$10',
+      'Max Context Output': '128K'
     }
   },
 
@@ -880,7 +935,7 @@ export const aiModelCategories: Record<string, string[]> = {
     'Angular support',
     'TypeScript support',
     'Tailwind CSS integration',
-    'Context Window Size',
+    'Total Context Window',
     'SWE-bench Score',
     'Semantic/deep search'
   ],
@@ -913,7 +968,8 @@ export const aiModelCategories: Record<string, string[]> = {
     'Enterprise features',
     'Privacy mode',
     'Custom model training',
-    'API Cost (per 1M tokens)'
+    'API Cost (per 1M tokens)',
+    'Max Context Output'
   ]
 };
 
