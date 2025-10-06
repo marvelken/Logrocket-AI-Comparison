@@ -10,7 +10,10 @@ export interface ToolData {
 }
 
 export const toolData: Record<string, ToolData> = {
+  // ============================================================================
   // AI MODELS SECTION
+  // ============================================================================
+  
   'claude-sonnet-4': {
     name: 'Claude 4 Sonnet',
     type: 'AI Model',
@@ -30,6 +33,9 @@ export const toolData: Record<string, ToolData> = {
       'Total Context Window': '200K',
       'SWE-bench Score': '64.93%',
       'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': '✅ (Hybrid)',
+      'Tool use capabilities': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -39,12 +45,18 @@ export const toolData: Record<string, ToolData> = {
       'Code refactoring': true,
       'Browser compatibility checks': true,
       'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
       'Mobile-first design': true,
       'Dark mode support': true,
       'Internationalization (i18n)': true,
       'PWA features': true,
       'Offline capabilities': true,
-      'Voice/audio input': 'Limited',
+      'Voice/audio input': true,
       'Image/design upload': true,
       'Video processing': 'Limited',
       'Multimodal capabilities': true,
@@ -55,9 +67,12 @@ export const toolData: Record<string, ToolData> = {
       'Privacy mode': true,
       'Custom model training': false,
       'API Cost (per 1M tokens)': '$3/$15',
-      'Max Context Output': '64K'
+      'Max Context Output': '64K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
     }
   },
+
   'claude-opus-4': {
     name: 'Claude 4 Opus',
     type: 'AI Model',
@@ -77,6 +92,9 @@ export const toolData: Record<string, ToolData> = {
       'Total Context Window': '200K',
       'SWE-bench Score': '67.7%',
       'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': '✅ (Hybrid)',
+      'Tool use capabilities': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -86,12 +104,18 @@ export const toolData: Record<string, ToolData> = {
       'Code refactoring': true,
       'Browser compatibility checks': true,
       'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
       'Mobile-first design': true,
       'Dark mode support': true,
       'Internationalization (i18n)': true,
       'PWA features': true,
       'Offline capabilities': true,
-      'Voice/audio input': 'Limited',
+      'Voice/audio input': true,
       'Image/design upload': true,
       'Video processing': 'Limited',
       'Multimodal capabilities': true,
@@ -102,9 +126,130 @@ export const toolData: Record<string, ToolData> = {
       'Privacy mode': true,
       'Custom model training': false,
       'API Cost (per 1M tokens)': '$15/$75',
-      'Max Context Output': '32K'
+      'Max Context Output': '32K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
     }
   },
+
+  'claude-sonnet-45': {
+    name: 'Claude Sonnet 4.5',
+    type: 'AI Model',
+    category: 'General Purpose AI',
+    description: 'Latest Sonnet model with enhanced capabilities',
+    pricing: '$3/$15 per 1M tokens',
+    benchmark: '77.2% SWE-bench',
+    features: {
+      'Real-time code completion': true,
+      'Multi-file editing': true,
+      'Design-to-code conversion': true,
+      'React component generation': true,
+      'Vue.js support': true,
+      'Angular support': true,
+      'TypeScript support': true,
+      'Tailwind CSS integration': true,
+      'Total Context Window': '200K',
+      'SWE-bench Score': '77.2%',
+      'Semantic/deep search': true,
+      'Autonomous agent mode': '✅ (Best-in-class)',
+      'Extended thinking/reasoning': '✅ (Hybrid)',
+      'Tool use capabilities': '✅ (Enhanced)',
+      'Responsive design generation': true,
+      'Accessibility (WCAG) compliance': true,
+      'Performance optimization suggestions': true,
+      'Bundle size analysis': true,
+      'SEO optimization': true,
+      'Error debugging assistance': true,
+      'Code refactoring': true,
+      'Browser compatibility checks': true,
+      'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
+      'Mobile-first design': true,
+      'Dark mode support': true,
+      'Internationalization (i18n)': true,
+      'PWA features': true,
+      'Offline capabilities': true,
+      'Voice/audio input': true,
+      'Image/design upload': true,
+      'Video processing': 'Limited',
+      'Multimodal capabilities': true,
+      'Free tier available': true,
+      'Open source': false,
+      'Self-hosting option': false,
+      'Enterprise features': true,
+      'Privacy mode': true,
+      'Custom model training': false,
+      'API Cost (per 1M tokens)': '$3/$15',
+      'Max Context Output': '64K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
+    }
+  },
+
+  'claude-opus-41': {
+    name: 'Claude Opus 4.1',
+    type: 'AI Model',
+    category: 'Premium AI',
+    description: 'Latest Opus model with advanced features',
+    pricing: '$15/$75 per 1M tokens',
+    benchmark: 'N/A',
+    features: {
+      'Real-time code completion': true,
+      'Multi-file editing': true,
+      'Design-to-code conversion': true,
+      'React component generation': true,
+      'Vue.js support': true,
+      'Angular support': true,
+      'TypeScript support': true,
+      'Tailwind CSS integration': true,
+      'Total Context Window': '200K',
+      'SWE-bench Score': false,
+      'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': '✅ (Hybrid)',
+      'Tool use capabilities': true,
+      'Responsive design generation': true,
+      'Accessibility (WCAG) compliance': true,
+      'Performance optimization suggestions': true,
+      'Bundle size analysis': true,
+      'SEO optimization': true,
+      'Error debugging assistance': true,
+      'Code refactoring': true,
+      'Browser compatibility checks': true,
+      'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
+      'Mobile-first design': true,
+      'Dark mode support': true,
+      'Internationalization (i18n)': true,
+      'PWA features': true,
+      'Offline capabilities': true,
+      'Voice/audio input': true,
+      'Image/design upload': true,
+      'Video processing': 'Limited',
+      'Multimodal capabilities': '✅ (Vision)',
+      'Free tier available': false,
+      'Open source': false,
+      'Self-hosting option': false,
+      'Enterprise features': true,
+      'Privacy mode': true,
+      'Custom model training': false,
+      'API Cost (per 1M tokens)': '$15/$75',
+      'Max Context Output': '32K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
+    }
+  },
+
   'gpt-41': {
     name: 'GPT-4.1',
     type: 'AI Model',
@@ -124,6 +269,9 @@ export const toolData: Record<string, ToolData> = {
       'Total Context Window': '1M',
       'SWE-bench Score': '39.58%',
       'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': true,
+      'Tool use capabilities': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -133,6 +281,12 @@ export const toolData: Record<string, ToolData> = {
       'Code refactoring': true,
       'Browser compatibility checks': true,
       'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
       'Mobile-first design': true,
       'Dark mode support': true,
       'Internationalization (i18n)': true,
@@ -149,9 +303,12 @@ export const toolData: Record<string, ToolData> = {
       'Privacy mode': true,
       'Custom model training': true,
       'API Cost (per 1M tokens)': '$2/$8',
-      'Max Context Output': '32.7K'
+      'Max Context Output': '32.7K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
     }
   },
+
   'gemini-25-pro': {
     name: 'Gemini 2.5 Pro',
     type: 'AI Model',
@@ -171,6 +328,9 @@ export const toolData: Record<string, ToolData> = {
       'Total Context Window': '1M',
       'SWE-bench Score': '53.60%',
       'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': true,
+      'Tool use capabilities': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -180,15 +340,21 @@ export const toolData: Record<string, ToolData> = {
       'Code refactoring': true,
       'Browser compatibility checks': true,
       'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
       'Mobile-first design': true,
       'Dark mode support': true,
       'Internationalization (i18n)': true,
       'PWA features': true,
       'Offline capabilities': 'Limited',
-      'Voice/audio input': true,
+      'Voice/audio input': '✅ (24 langs)',
       'Image/design upload': true,
-      'Video processing': true,
-      'Multimodal capabilities': true,
+      'Video processing': '✅ (Full)',
+      'Multimodal capabilities': '✅ (Native)',
       'Free tier available': true,
       'Open source': false,
       'Self-hosting option': false,
@@ -196,9 +362,12 @@ export const toolData: Record<string, ToolData> = {
       'Privacy mode': true,
       'Custom model training': 'Limited',
       'API Cost (per 1M tokens)': '$1.25/$10',
-      'Max Context Output': '65K'
+      'Max Context Output': '65K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
     }
   },
+
   'kimi-k2': {
     name: 'Kimi K2',
     type: 'AI Model',
@@ -218,6 +387,9 @@ export const toolData: Record<string, ToolData> = {
       'Total Context Window': '128K',
       'SWE-bench Score': '43.80%',
       'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': true,
+      'Tool use capabilities': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -227,6 +399,12 @@ export const toolData: Record<string, ToolData> = {
       'Code refactoring': true,
       'Browser compatibility checks': true,
       'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
       'Mobile-first design': true,
       'Dark mode support': true,
       'Internationalization (i18n)': true,
@@ -243,16 +421,19 @@ export const toolData: Record<string, ToolData> = {
       'Privacy mode': true,
       'Custom model training': false,
       'API Cost (per 1M tokens)': '$0.15/$2.50',
-      'Max Context Output': '131.1K'
+      'Max Context Output': '131.1K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
     }
   },
+
   'grok-4': {
     name: 'Grok 4',
     type: 'AI Model',
     category: 'Specialized Coding AI',
     description: 'First-principles reasoning with coding specialization',
-    pricing: '$300/year',
-    benchmark: 'N/A',
+    pricing: '$3/$15 per 1M tokens',
+    benchmark: 'Top-tier',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -263,8 +444,11 @@ export const toolData: Record<string, ToolData> = {
       'TypeScript support': true,
       'Tailwind CSS integration': true,
       'Total Context Window': '256K',
-      'SWE-bench Score': false,
+      'SWE-bench Score': 'Top-tier',
       'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': '✅ (Always-on)',
+      'Tool use capabilities': '✅ (Native)',
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -273,7 +457,13 @@ export const toolData: Record<string, ToolData> = {
       'Error debugging assistance': true,
       'Code refactoring': true,
       'Browser compatibility checks': true,
-      'Advanced reasoning mode': true,
+      'Advanced reasoning mode': '✅ (Always-on)',
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
       'Mobile-first design': true,
       'Dark mode support': true,
       'Internationalization (i18n)': true,
@@ -283,16 +473,78 @@ export const toolData: Record<string, ToolData> = {
       'Image/design upload': true,
       'Video processing': 'Limited',
       'Multimodal capabilities': true,
-      'Free tier available': false,
+      'Free tier available': '✅ (Limited)',
       'Open source': false,
       'Self-hosting option': false,
       'Enterprise features': true,
       'Privacy mode': true,
       'Custom model training': false,
-      'API Cost (per 1M tokens)': '$300/year',
-      'Max Context Output': '256K'
+      'API Cost (per 1M tokens)': '$3/$15',
+      'Max Context Output': '256K',
+      'Batch processing discount': false,
+      'Prompt caching discount': false
     }
   },
+
+  'grok-4-fast': {
+    name: 'Grok 4 Fast',
+    type: 'AI Model',
+    category: 'Specialized Coding AI',
+    description: 'High-speed version of Grok 4',
+    pricing: '$0.20-0.40/$0.50-1.00 per 1M tokens',
+    benchmark: 'Similar to Grok 4',
+    features: {
+      'Real-time code completion': true,
+      'Multi-file editing': true,
+      'Design-to-code conversion': true,
+      'React component generation': true,
+      'Vue.js support': true,
+      'Angular support': true,
+      'TypeScript support': true,
+      'Tailwind CSS integration': true,
+      'Total Context Window': '2M',
+      'SWE-bench Score': 'Similar to Grok 4',
+      'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': '✅ (Unified)',
+      'Tool use capabilities': '✅ (RL-trained)',
+      'Responsive design generation': true,
+      'Accessibility (WCAG) compliance': true,
+      'Performance optimization suggestions': true,
+      'Bundle size analysis': true,
+      'SEO optimization': true,
+      'Error debugging assistance': true,
+      'Code refactoring': true,
+      'Browser compatibility checks': true,
+      'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
+      'Mobile-first design': true,
+      'Dark mode support': true,
+      'Internationalization (i18n)': true,
+      'PWA features': true,
+      'Offline capabilities': true,
+      'Voice/audio input': true,
+      'Image/design upload': true,
+      'Video processing': 'Limited',
+      'Multimodal capabilities': true,
+      'Free tier available': '✅ (Limited)',
+      'Open source': false,
+      'Self-hosting option': false,
+      'Enterprise features': true,
+      'Privacy mode': true,
+      'Custom model training': false,
+      'API Cost (per 1M tokens)': '$0.20-0.40/$0.50-1.00',
+      'Max Context Output': '2M',
+      'Batch processing discount': false,
+      'Prompt caching discount': true
+    }
+  },
+
   'qwen-3-coder': {
     name: 'Qwen 3 Coder',
     type: 'AI Model',
@@ -312,6 +564,9 @@ export const toolData: Record<string, ToolData> = {
       'Total Context Window': '256K-1M',
       'SWE-bench Score': '55.40%',
       'Semantic/deep search': 'Limited',
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': true,
+      'Tool use capabilities': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -321,6 +576,12 @@ export const toolData: Record<string, ToolData> = {
       'Code refactoring': true,
       'Browser compatibility checks': true,
       'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
       'Mobile-first design': true,
       'Dark mode support': true,
       'Internationalization (i18n)': true,
@@ -337,9 +598,12 @@ export const toolData: Record<string, ToolData> = {
       'Privacy mode': true,
       'Custom model training': true,
       'API Cost (per 1M tokens)': '$0.07-1.10',
-      'Max Context Output': '262K'
+      'Max Context Output': '262K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
     }
   },
+
   'deepseek-coder': {
     name: 'DeepSeek Coder',
     type: 'AI Model',
@@ -359,6 +623,9 @@ export const toolData: Record<string, ToolData> = {
       'Total Context Window': '128K',
       'SWE-bench Score': false,
       'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': true,
+      'Tool use capabilities': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -368,6 +635,12 @@ export const toolData: Record<string, ToolData> = {
       'Code refactoring': true,
       'Browser compatibility checks': true,
       'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
       'Mobile-first design': true,
       'Dark mode support': true,
       'Internationalization (i18n)': true,
@@ -384,9 +657,12 @@ export const toolData: Record<string, ToolData> = {
       'Privacy mode': true,
       'Custom model training': true,
       'API Cost (per 1M tokens)': '$0.07-1.10',
-      'Max Context Output': '8.2k'
+      'Max Context Output': '8.2K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
     }
   },
+
   'gpt-5-medium': {
     name: 'GPT-5 (medium reasoning)',
     type: 'AI Model',
@@ -406,6 +682,9 @@ export const toolData: Record<string, ToolData> = {
       'Total Context Window': '400K',
       'SWE-bench Score': '65%',
       'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': true,
+      'Tool use capabilities': true,
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -415,6 +694,12 @@ export const toolData: Record<string, ToolData> = {
       'Code refactoring': true,
       'Browser compatibility checks': true,
       'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
       'Mobile-first design': true,
       'Dark mode support': true,
       'Internationalization (i18n)': true,
@@ -422,7 +707,7 @@ export const toolData: Record<string, ToolData> = {
       'Offline capabilities': true,
       'Voice/audio input': true,
       'Image/design upload': true,
-      'Video processing': true,
+      'Video processing': 'Basic',
       'Multimodal capabilities': true,
       'Free tier available': true,
       'Open source': false,
@@ -431,11 +716,75 @@ export const toolData: Record<string, ToolData> = {
       'Privacy mode': true,
       'Custom model training': true,
       'API Cost (per 1M tokens)': '$1.25/$10',
-      'Max Context Output': '128K'
+      'Max Context Output': '128K',
+      'Batch processing discount': '✅ (50%)',
+      'Prompt caching discount': '✅ (90%)'
     }
   },
 
+  'llama-4-maverick': {
+    name: 'Llama 4 Maverick',
+    type: 'AI Model',
+    category: 'Open Source AI',
+    description: 'Meta\'s latest open-source model',
+    pricing: '$0.19-0.49 (estimated) per 1M tokens',
+    benchmark: 'N/A',
+    features: {
+      'Real-time code completion': true,
+      'Multi-file editing': true,
+      'Design-to-code conversion': true,
+      'React component generation': true,
+      'Vue.js support': true,
+      'Angular support': true,
+      'TypeScript support': true,
+      'Tailwind CSS integration': true,
+      'Total Context Window': '10M (Scout) / 256K (Maverick)',
+      'SWE-bench Score': false,
+      'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': true,
+      'Tool use capabilities': true,
+      'Responsive design generation': true,
+      'Accessibility (WCAG) compliance': true,
+      'Performance optimization suggestions': true,
+      'Bundle size analysis': true,
+      'SEO optimization': true,
+      'Error debugging assistance': true,
+      'Code refactoring': true,
+      'Browser compatibility checks': true,
+      'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
+      'Mobile-first design': true,
+      'Dark mode support': true,
+      'Internationalization (i18n)': '✅ (200 langs)',
+      'PWA features': true,
+      'Offline capabilities': true,
+      'Voice/audio input': 'Limited',
+      'Image/design upload': '✅ (up to 8-10)',
+      'Video processing': 'Limited',
+      'Multimodal capabilities': '✅ (Native, Early Fusion)',
+      'Free tier available': true,
+      'Open source': '✅ (Apache 2.0)',
+      'Self-hosting option': true,
+      'Enterprise features': true,
+      'Privacy mode': true,
+      'Custom model training': true,
+      'API Cost (per 1M tokens)': '$0.19-0.49 (estimated)',
+      'Max Context Output': '256K',
+      'Batch processing discount': true,
+      'Prompt caching discount': true
+    }
+  },
+
+  // ============================================================================
   // DEVELOPMENT TOOLS SECTION
+  // ============================================================================
+
   'github-copilot': {
     name: 'GitHub Copilot',
     type: 'Development Tool',
@@ -490,6 +839,7 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise Pricing': '$39/user'
     }
   },
+
   'cursor-ide': {
     name: 'Cursor IDE',
     type: 'Development Tool',
@@ -505,7 +855,7 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Native IDE integration': true,
+      'Native IDE integration': '✅ (Full IDE)',
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -544,6 +894,7 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise Pricing': '$40/user'
     }
   },
+
   'windsurf': {
     name: 'Windsurf',
     type: 'Development Tool',
@@ -559,9 +910,9 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Native IDE integration': true,
+      'Native IDE integration': '✅ (Full IDE)',
       'Responsive design generation': true,
-      'Accessibility (WCAG) compliance': false,
+      'Accessibility (WCAG) compliance': 'Limited',
       'Performance optimization suggestions': true,
       'Bundle size analysis': false,
       'SEO optimization': true,
@@ -598,6 +949,7 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise Pricing': '$60/user'
     }
   },
+
   'vercel-v0': {
     name: 'Vercel v0',
     type: 'Development Tool',
@@ -652,6 +1004,7 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise Pricing': 'Custom'
     }
   },
+
   'bolt-new': {
     name: 'Bolt.new',
     type: 'Development Tool',
@@ -706,6 +1059,7 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise Pricing': 'Custom'
     }
   },
+
   'jetbrains-ai': {
     name: 'JetBrains AI',
     type: 'Development Tool',
@@ -721,7 +1075,7 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Native IDE integration': true,
+      'Native IDE integration': '✅ (Full IDE)',
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': false,
       'Performance optimization suggestions': true,
@@ -760,6 +1114,7 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise Pricing': 'Custom'
     }
   },
+
   'lovable-ai': {
     name: 'Lovable AI',
     type: 'Development Tool',
@@ -814,6 +1169,7 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise Pricing': 'Custom'
     }
   },
+
   'gemini-cli': {
     name: 'Gemini CLI',
     type: 'Development Tool',
@@ -829,7 +1185,7 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Native IDE integration': true,
+      'Native IDE integration': '✅ (CLI)',
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -868,11 +1224,12 @@ export const toolData: Record<string, ToolData> = {
       'Enterprise Pricing': 'Custom'
     }
   },
+
   'claude-code': {
     name: 'Claude Code',
     type: 'Development Tool',
     category: 'Terminal AI',
-    description: 'Terminal-native development with Claude 3.7 Sonnet',
+    description: 'Terminal-native development with Claude',
     pricing: '$20-$200/month',
     features: {
       'Real-time code completion': true,
@@ -883,7 +1240,7 @@ export const toolData: Record<string, ToolData> = {
       'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
-      'Native IDE integration': true,
+      'Native IDE integration': '✅ (CLI)',
       'Responsive design generation': true,
       'Accessibility (WCAG) compliance': true,
       'Performance optimization suggestions': true,
@@ -921,6 +1278,61 @@ export const toolData: Record<string, ToolData> = {
       'Monthly Pricing': '$20-$200',
       'Enterprise Pricing': 'Custom'
     }
+  },
+
+  'codex': {
+    name: 'Codex',
+    type: 'Development Tool',
+    category: 'Terminal AI',
+    description: 'AI-powered command line development tool',
+    pricing: '$20-$200/month',
+    features: {
+      'Real-time code completion': true,
+      'Multi-file editing': true,
+      'Design-to-code conversion': true,
+      'React component generation': true,
+      'Vue.js support': true,
+      'Angular support': true,
+      'TypeScript support': true,
+      'Tailwind CSS integration': true,
+      'Native IDE integration': '✅ (CLI)',
+      'Responsive design generation': true,
+      'Accessibility (WCAG) compliance': true,
+      'Performance optimization suggestions': true,
+      'Bundle size analysis': false,
+      'SEO optimization': true,
+      'Error debugging assistance': true,
+      'Code refactoring': true,
+      'Browser compatibility checks': 'Limited',
+      'Autonomous agent mode': true,
+      'Git integration': true,
+      'Live preview/hot reload': false,
+      'Collaborative editing': false,
+      'Custom component libraries': 'Limited',
+      'API integration assistance': true,
+      'Testing code generation': true,
+      'Documentation generation': true,
+      'Search': true,
+      'Semantic/deep search': true,
+      'Terminal integration': true,
+      'Mobile-first design': true,
+      'Dark mode support': true,
+      'Internationalization (i18n)': 'Limited',
+      'PWA features': 'Limited',
+      'Offline capabilities': false,
+      'Voice/audio input': false,
+      'Image/design upload': true,
+      'Screenshot-to-code': 'Limited',
+      '3D graphics support': 'Limited',
+      'Free tier available': true,
+      'Open source': false,
+      'Self-hosting option': false,
+      'Enterprise features': true,
+      'Privacy mode': true,
+      'Custom model training': false,
+      'Monthly Pricing': '$20-$200',
+      'Enterprise Pricing': 'Custom'
+    }
   }
 };
 
@@ -937,7 +1349,10 @@ export const aiModelCategories: Record<string, string[]> = {
     'Tailwind CSS integration',
     'Total Context Window',
     'SWE-bench Score',
-    'Semantic/deep search'
+    'Semantic/deep search',
+    'Autonomous agent mode',
+    'Extended thinking/reasoning',
+    'Tool use capabilities'
   ],
   'Quality and optimization features': [
     'Responsive design generation',
@@ -948,7 +1363,13 @@ export const aiModelCategories: Record<string, string[]> = {
     'Error debugging assistance',
     'Code refactoring',
     'Browser compatibility checks',
-    'Advanced reasoning mode'
+    'Advanced reasoning mode',
+    'Code review capabilities',
+    'Security/vulnerability detection',
+    'Code quality scoring',
+    'Architecture/design guidance',
+    'Test generation',
+    'Code style adherence'
   ],
   'Modern web development features': [
     'Mobile-first design',
@@ -969,7 +1390,9 @@ export const aiModelCategories: Record<string, string[]> = {
     'Privacy mode',
     'Custom model training',
     'API Cost (per 1M tokens)',
-    'Max Context Output'
+    'Max Context Output',
+    'Batch processing discount',
+    'Prompt caching discount'
   ]
 };
 
@@ -1055,18 +1478,13 @@ export function getRelevantFeatureCategories(selectedTools: string[]): Record<st
   const hasAIModels = selectedTools.some(id => toolData[id]?.type === 'AI Model');
   const hasDevTools = selectedTools.some(id => toolData[id]?.type === 'Development Tool');
   
-  // Return appropriate categories based on selection
   if (hasAIModels && hasDevTools) {
-    // Mixed selection - return both AI and tool categories
     return { ...aiModelCategories, ...developmentToolCategories };
   } else if (hasAIModels) {
-    // Only AI models selected
     return aiModelCategories;
   } else if (hasDevTools) {
-    // Only development tools selected
     return developmentToolCategories;
   }
   
-  // Default to AI model categories if nothing selected
   return aiModelCategories;
 }
