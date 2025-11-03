@@ -138,7 +138,7 @@ export const toolData: Record<string, ToolData> = {
     category: 'General Purpose AI',
     description: 'Latest Sonnet model with enhanced capabilities',
     pricing: '$3/$15 per 1M tokens',
-    benchmark: '77.2% SWE-bench',
+    benchmark: '70% SWE-bench',
     features: {
       'Real-time code completion': true,
       'Multi-file editing': true,
@@ -149,7 +149,7 @@ export const toolData: Record<string, ToolData> = {
       'TypeScript support': true,
       'Tailwind CSS integration': true,
       'Total Context Window': '200K',
-      'SWE-bench Score': '77.2%',
+      'SWE-bench Score': '70%',
       'Semantic/deep search': true,
       'Autonomous agent mode': '✅ (Best-in-class)',
       'Extended thinking/reasoning': '✅ (Hybrid)',
@@ -247,6 +247,65 @@ export const toolData: Record<string, ToolData> = {
       'Max Context Output': '32K',
       'Batch processing discount': true,
       'Prompt caching discount': true
+    }
+  },
+
+  'glm-45': {
+    name: 'GLM-4.5',
+    type: 'AI Model',
+    category: 'Open Source AI',
+    description: 'Open-source MoE model with exceptional tool-use and bilingual capabilities',
+    pricing: '$0.35/$0.39 per 1M tokens',
+    benchmark: '54.20% SWE-bench',
+    features: {
+      'Real-time code completion': true,
+      'Multi-file editing': true,
+      'Design-to-code conversion': true,
+      'React component generation': true,
+      'Vue.js support': true,
+      'Angular support': true,
+      'TypeScript support': true,
+      'Tailwind CSS integration': true,
+      'Total Context Window': '128K',
+      'SWE-bench Score': '54.20%',
+      'Semantic/deep search': true,
+      'Autonomous agent mode': true,
+      'Extended thinking/reasoning': '✅ (Hybrid)',
+      'Tool use capabilities': true,
+      'Responsive design generation': true,
+      'Accessibility (WCAG) compliance': true,
+      'Performance optimization suggestions': true,
+      'Bundle size analysis': true,
+      'SEO optimization': true,
+      'Error debugging assistance': true,
+      'Code refactoring': true,
+      'Browser compatibility checks': true,
+      'Advanced reasoning mode': true,
+      'Code review capabilities': true,
+      'Security/vulnerability detection': true,
+      'Code quality scoring': true,
+      'Architecture/design guidance': true,
+      'Test generation': true,
+      'Code style adherence': true,
+      'Mobile-first design': true,
+      'Dark mode support': true,
+      'Internationalization (i18n)': '✅ (24+ languages, exceptional English-Chinese bilingual)',
+      'PWA features': true,
+      'Offline capabilities': 'Limited',
+      'Voice/audio input': 'Limited',
+      'Image/design upload': true,
+      'Video processing': 'Limited',
+      'Multimodal capabilities': '✅ (Vision)',
+      'Free tier available': '✅ (Via Z.ai platform)',
+      'Open source': '✅ (MIT License)',
+      'Self-hosting option': true,
+      'Enterprise features': true,
+      'Privacy mode': true,
+      'Custom model training': true,
+      'API Cost (per 1M tokens)': '$0.35/$0.39',
+      'Max Context Output': '131K',
+      'Batch processing discount': true,
+      'Prompt caching discount': '⚠️ (Not specified)'
     }
   },
 
@@ -797,7 +856,7 @@ export const toolData: Record<string, ToolData> = {
       'Design-to-code conversion': true,
       'React component generation': true,
       'Vue.js support': true,
-      'Angular support': 'Limited',
+      'Angular support': true,
       'TypeScript support': true,
       'Tailwind CSS integration': true,
       'Native IDE integration': true,
@@ -993,7 +1052,7 @@ export const toolData: Record<string, ToolData> = {
       'Voice/audio input': false,
       'Image/design upload': true,
       'Screenshot-to-code': true,
-      '3D graphics support': true,
+      '3D graphics support': 'Limited',
       'Free tier available': true,
       'Open source': false,
       'Self-hosting option': false,
@@ -1333,6 +1392,61 @@ export const toolData: Record<string, ToolData> = {
       'Monthly Pricing': '$20-$200',
       'Enterprise Pricing': 'Custom'
     }
+  },
+
+  'kimi-k2-cli': {
+    name: 'Kimi K2 CLI',
+    type: 'Development Tool',
+    category: 'Command Line AI',
+    description: 'Open-source terminal AI with agentic coding and multi-file refactoring',
+    pricing: 'Free-$0.15/month',
+    features: {
+      'Real-time code completion': true,
+      'Multi-file editing': true,
+      'Design-to-code conversion': false,
+      'React component generation': true,
+      'Vue.js support': true,
+      'Angular support': true,
+      'TypeScript support': true,
+      'Tailwind CSS integration': true,
+      'Native IDE integration': true,
+      'Responsive design generation': true,
+      'Accessibility (WCAG) compliance': 'Limited',
+      'Performance optimization suggestions': true,
+      'Bundle size analysis': false,
+      'SEO optimization': 'Limited',
+      'Error debugging assistance': true,
+      'Code refactoring': true,
+      'Browser compatibility checks': 'Limited',
+      'Autonomous agent mode': true,
+      'Git integration': true,
+      'Live preview/hot reload': false,
+      'Collaborative editing': false,
+      'Custom component libraries': true,
+      'API integration assistance': true,
+      'Testing code generation': true,
+      'Documentation generation': true,
+      'Search': true,
+      'Semantic/deep search': true,
+      'Terminal integration': '✅ (Native)',
+      'Mobile-first design': true,
+      'Dark mode support': 'Limited',
+      'Internationalization (i18n)': true,
+      'PWA features': 'Limited',
+      'Offline capabilities': false,
+      'Voice/audio input': false,
+      'Image/design upload': false,
+      'Screenshot-to-code': false,
+      '3D graphics support': 'Limited',
+      'Free tier available': true,
+      'Open source': true,
+      'Self-hosting option': true,
+      'Enterprise features': true,
+      'Privacy mode': true,
+      'Custom model training': true,
+      'Monthly Pricing': 'Free-$0.15',
+      'Enterprise Pricing': 'Custom'
+    }
   }
 };
 
@@ -1467,7 +1581,7 @@ export function getDevelopmentTools(): Record<string, ToolData> {
     Object.entries(toolData).filter(([_, tool]) => tool.type === 'Development Tool')
   );
 }
-
+ 
 export function getToolsByCategory(category: string): Record<string, ToolData> {
   return Object.fromEntries(
     Object.entries(toolData).filter(([_, tool]) => tool.category === category)
