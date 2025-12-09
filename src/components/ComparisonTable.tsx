@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, X, AlertTriangle, ChevronDown, ChevronRight, Download, Share2, Brain, Code, Zap, Trophy, DollarSign, FileText } from 'lucide-react';
+import { Check, X, AlertTriangle, ChevronDown, ChevronRight, Download, Share2, Brain, Code, Zap, Trophy, DollarSign, FileText, Award } from 'lucide-react';
 import { toolData, getRelevantFeatureCategories } from '../lib/data';
 
 interface ComparisonTableProps {
@@ -110,6 +110,83 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
   const aiModels = selectedTools.filter(id => toolData[id].type === 'AI Model');
   const devTools = selectedTools.filter(id => toolData[id].type === 'Development Tool');
 
+  // Calculate recommendation based on full support count and benchmark scores
+  const getRecommendation = () => {
+    if (selectedTools.length < 2) return null;
+
+    const scores = selectedTools.map(toolId => {
+      const tool = toolData[toolId];
+      let fullSupportCount = 0;
+      let totalApplicableFeatures = 0;
+
+      Object.entries(relevantCategories).forEach(([category, features]) => {
+        features.forEach(feature => {
+          const hasFeature = tool.features[feature];
+          
+          // Skip N/A features
+          if (hasFeature === undefined) return;
+          if (category === 'AI Model Capabilities' && tool.type !== 'AI Model') return;
+          if ((category === 'Tool Integration' || category === 'Workflow Features') && tool.type !== 'Development Tool') return;
+
+          totalApplicableFeatures++;
+          if (hasFeature === true) {
+            fullSupportCount++;
+          }
+        });
+      });
+
+      // Extract SWE-bench score for AI models
+      let sweBenchScore = 0;
+      if (tool.type === 'AI Model' && tool.features['SWE-bench Score']) {
+        const scoreStr = String(tool.features['SWE-bench Score']);
+        const match = scoreStr.match(/(\d+\.?\d*)/);
+        if (match) {
+          sweBenchScore = parseFloat(match[1]);
+        }
+      }
+
+      const percentage = totalApplicableFeatures > 0 ? (fullSupportCount / totalApplicableFeatures) * 100 : 0;
+      
+      // Calculate composite score: 60% feature coverage + 40% SWE-bench (for AI models)
+      let compositeScore = percentage;
+      if (tool.type === 'AI Model' && sweBenchScore > 0) {
+        compositeScore = (percentage * 0.6) + (sweBenchScore * 0.4);
+      }
+
+      return {
+        toolId,
+        toolName: tool.name,
+        toolType: tool.type,
+        fullSupportCount,
+        totalApplicableFeatures,
+        percentage,
+        sweBenchScore,
+        compositeScore
+      };
+    });
+
+    // Sort by composite score, then full support count
+    scores.sort((a, b) => {
+      if (Math.abs(b.compositeScore - a.compositeScore) > 1) {
+        return b.compositeScore - a.compositeScore;
+      }
+      return b.fullSupportCount - a.fullSupportCount;
+    });
+
+    const winner = scores[0];
+    const runnerUp = scores[1];
+
+    // Only show recommendation if there's a clear winner
+    if (winner.compositeScore > runnerUp.compositeScore + 2 || 
+        (winner.compositeScore > runnerUp.compositeScore && winner.fullSupportCount > runnerUp.fullSupportCount)) {
+      return winner;
+    }
+
+    return null;
+  };
+
+  const recommendation = getRecommendation();
+
   return (
     <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
       {/* Header */}
@@ -142,6 +219,60 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
           </div>
         </div>
       </div>
+
+      {/* Recommendation Banner */}
+      {recommendation && (
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-b-2 border-green-200 px-8 py-5">
+          <div className="flex items-start space-x-4">
+            <div className="flex-shrink-0">
+              <Award className="w-8 h-8 text-green-600" />
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center space-x-2 mb-2">
+                <h3 className="text-lg font-bold text-green-900">
+                  🏆 Recommended: {recommendation.toolName}
+                </h3>
+                <span className="px-3 py-1 bg-green-600 text-white text-xs font-semibold rounded-full">
+                  BEST CHOICE
+                </span>
+              </div>
+              <p className="text-green-800 text-sm mb-3">
+                Based on {recommendation.toolType === 'AI Model' && recommendation.sweBenchScore > 0 ? 'benchmark performance and feature comparison' : 'feature comparison'}, 
+                <strong> {recommendation.toolName}</strong> has the most comprehensive support 
+                with <strong>{recommendation.fullSupportCount}</strong> fully supported features out of {recommendation.totalApplicableFeatures} applicable features 
+                ({recommendation.percentage.toFixed(1)}% coverage)
+                {recommendation.toolType === 'AI Model' && recommendation.sweBenchScore > 0 && (
+                  <span> and a <strong>{recommendation.sweBenchScore}% SWE-bench score</strong></span>
+                )}.
+              </p>
+              <div className="flex items-center space-x-6 text-sm">
+                <div className="flex items-center space-x-2">
+                  <Check className="w-4 h-4 text-green-600" />
+                  <span className="text-green-700 font-medium">
+                    {recommendation.fullSupportCount} Full Support Features
+                  </span>
+                </div>
+                {recommendation.toolType === 'AI Model' && recommendation.sweBenchScore > 0 && (
+                  <div className="flex items-center space-x-2">
+                    <Trophy className="w-4 h-4 text-yellow-600" />
+                    <span className="text-yellow-700 font-medium">
+                      {recommendation.sweBenchScore}% SWE-bench
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-center space-x-2">
+                  {recommendation.toolType === 'AI Model' ? (
+                    <Brain className="w-4 h-4 text-purple-600" />
+                  ) : (
+                    <Code className="w-4 h-4 text-blue-600" />
+                  )}
+                  <span className="text-gray-700">{recommendation.toolType}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Tool Headers with Enhanced Info */}
       <div className="bg-gray-50 px-8 py-6 border-b border-gray-200">
