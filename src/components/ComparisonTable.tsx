@@ -135,10 +135,10 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
         });
       });
 
-      // Extract SWE-bench score for AI models
+      // Extract WebDev AI Elo score for AI models
       let sweBenchScore = 0;
-      if (tool.type === 'AI Model' && tool.features['SWE-bench Score']) {
-        const scoreStr = String(tool.features['SWE-bench Score']);
+      if (tool.type === 'AI Model' && tool.features['WebDev AI Leader Board']) {
+        const scoreStr = String(tool.features['WebDev AI Leader Board']);
         const match = scoreStr.match(/(\d+\.?\d*)/);
         if (match) {
           sweBenchScore = parseFloat(match[1]);
@@ -147,7 +147,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
 
       const percentage = totalApplicableFeatures > 0 ? (fullSupportCount / totalApplicableFeatures) * 100 : 0;
       
-      // Calculate composite score: 60% feature coverage + 40% SWE-bench (for AI models)
+      // Calculate composite score: 60% feature coverage + 40% WebDev AI Elo (for AI models)
       let compositeScore = percentage;
       if (tool.type === 'AI Model' && sweBenchScore > 0) {
         compositeScore = (percentage * 0.6) + (sweBenchScore * 0.4);
@@ -242,7 +242,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
                 with <strong>{recommendation.fullSupportCount}</strong> fully supported features out of {recommendation.totalApplicableFeatures} applicable features 
                 ({recommendation.percentage.toFixed(1)}% coverage)
                 {recommendation.toolType === 'AI Model' && recommendation.sweBenchScore > 0 && (
-                  <span> and a <strong>{recommendation.sweBenchScore}% SWE-bench score</strong></span>
+                  <span> and a <strong>{recommendation.sweBenchScore} WebDev AI Elo</strong></span>
                 )}.
               </p>
               <div className="flex items-center space-x-6 text-sm">
@@ -256,7 +256,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ selectedTools }) => {
                   <div className="flex items-center space-x-2">
                     <Trophy className="w-4 h-4 text-yellow-600" />
                     <span className="text-yellow-700 font-medium">
-                      {recommendation.sweBenchScore}% SWE-bench
+                      {recommendation.sweBenchScore} WebDev AI Elo
                     </span>
                   </div>
                 )}

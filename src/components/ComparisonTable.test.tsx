@@ -159,8 +159,8 @@ describe('ComparisonTable Component Tests', () => {
     const aiModels = getAIModels();
     const allIds = Object.keys(aiModels);
 
-    // Claude Opus 4.5 and Claude Sonnet 4 typically have different feature counts
-    const selectedIds = ['claude-opus-45', 'claude-sonnet-4'].filter(id => allIds.includes(id));
+    // Claude Opus 4.5 and Claude Sonnet 4.6 typically have different feature counts
+    const selectedIds = ['claude-opus-45', 'claude-sonnet-46'].filter(id => allIds.includes(id));
 
     if (selectedIds.length === 2) {
       render(<ComparisonTable selectedTools={selectedIds} />);
@@ -220,7 +220,8 @@ describe('ComparisonTable Component Tests', () => {
 
     selectedIds.forEach(id => {
       const tool = toolData[id];
-      expect(screen.getByText(tool.category)).toBeInTheDocument();
+      const matches = screen.getAllByText(tool.category);
+      expect(matches.length).toBeGreaterThan(0);
     });
   });
 

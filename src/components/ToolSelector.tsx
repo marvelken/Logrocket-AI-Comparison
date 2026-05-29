@@ -281,8 +281,8 @@ const ToolSelector: React.FC<ToolSelectorProps> = ({ onCompare }) => {
             <div className="text-sm text-gray-600">Dev Tools</div>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4">
-            <div className="text-2xl font-bold text-green-600">75%</div>
-            <div className="text-sm text-gray-600">Max SWE-bench</div>
+            <div className="text-2xl font-bold text-green-600">1567</div>
+            <div className="text-sm text-gray-600">Top WebDev AI Elo</div>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4">
             <div className="text-2xl font-bold text-orange-600">2M</div>
